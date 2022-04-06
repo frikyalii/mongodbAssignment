@@ -1,0 +1,19 @@
+1. db.createCollection('users');
+2. use users
+3. db.users.insertMany( [ { username: "GoodGuyGreg", first_name: "GoodGuy", last_name: "Greg" },{ username: "ScumbagSteve", first_name: "Scumbag", last_namelast_name: "Steve"}  ] )
+4. db.createCollection('posts');
+5. use posts
+6. db.posts.insertMany( [ {username:"GoodGuyGreg", title: "Passes out party", body: "Wakes up early and cleans house"}, { username: "GoodGuyGreg", title: "Steals your identity", body: "Raises your credit score" }, { username: "GoodGuyGreg", title: "Reports a bug in your code", body: "Sends you a Pull Request" },{ username: "ScumbagSteve", title: "Borrows something", body: "Sells it"},{ username: "ScumbagSteve", title: "Borrows everything", body: "The end"},{ username: "ScumbagSteve", title: "Forks your repo on github", body: "The end"}  ] )
+7.db.createCollection('comments');
+8.use comments
+9.db.comments.insertMany( [ { username: "GoodGuyGreg", comment: "Hope you got a good deal!", post: "Borrows something"}, { username: "GoodGuyGreg", comment: "What's mine is yours!", post: "Borrows everything" }, { username: "GoodGuyGreg", comment: "Don't violate the licensing agreement!", post: "Forks your repo on github" },{ username: "ScumbagSteve", comment: "It still isn't clean", post: "Passes out at party"}, { username: "ScumbagSteve", comment: "Denied your PR cause i found a hack", post: "Reports a bug in your code" }  ] )
+10.use users
+11.db.users.find().pretty()
+12.db.posts.find().pretty()
+13.use posts
+14.db.posts.find({username: "GoodGuyGreg"}).pretty()
+15.db.posts.find({username: "ScumbagSteve"}).pretty()
+16.use comments
+17.db.comments.find({username: "ScumbagSteve"}).pretty()
+18.db.comments.find({username: "GoodGuyGreg"}).pretty()
+19.db.comments.find({post: "Reports a bug in your code"}).pretty()
